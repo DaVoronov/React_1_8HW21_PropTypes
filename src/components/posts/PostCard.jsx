@@ -55,12 +55,6 @@ function PostCard({
   }
 
   function handleDeleteClick() {
-    deletePostService(id).then(() => {
-      onDelete(id);
-    });
-  }
-
-  function handleDeleteClick() {
     setIsDeleteLoading(true);
 
     deletePostService(id)
@@ -79,7 +73,9 @@ function PostCard({
 
             <Box>
               <Heading size="sm">{author.fullName || "-"}</Heading>
-              <Text>@{author.username}</Text>
+              <Text as={Link} to={`/users/${author.id}`}>
+                @{author.username}
+              </Text>
             </Box>
           </Flex>
 
