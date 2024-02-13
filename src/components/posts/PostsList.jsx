@@ -2,7 +2,7 @@ import { Stack } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import PostCard from "./PostCard";
 
-function PostsList({ posts, onLike }) {
+function PostsList({ posts, onLike, onDelete }) {
   return (
     <Stack>
       {posts.map((post) => (
@@ -16,6 +16,7 @@ function PostsList({ posts, onLike }) {
           onLike={onLike}
           isLiked={post.isLiked}
           likesCount={post._count.likedBy}
+          onDelete={onDelete}
         />
       ))}
     </Stack>
@@ -25,6 +26,7 @@ function PostsList({ posts, onLike }) {
 PostsList.propTypes = {
   posts: PropTypes.array.isRequired,
   onLike: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default PostsList;

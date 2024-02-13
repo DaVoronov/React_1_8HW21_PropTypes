@@ -1,13 +1,13 @@
-import axios from 'axios';
+import axios from "axios";
 
 export function loginService(data) {
-  return axios.post('/auth/login', data);
+  return axios.post("/auth/login", data);
 }
 
 export function registerService(data) {
-  return axios.post('/auth/register', data);
+  return axios.post("/auth/register", data);
 }
 
 export function verifyService() {
-  return axios.get('/auth/verify');
+  return axios.get("/auth/verify");
 }
